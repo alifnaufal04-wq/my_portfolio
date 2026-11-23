@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MUHAMMAD ALIF NAUFAL BIN AZEMI | Portfolio</title>
+<meta name="description" content="Portfolio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fb;--surface:#fff;--ink:#14213d;--muted:#55607a;--line:#d9dfec;--accent:#2f5bea;--accent-ink:#fff;--font:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1320;--surface:#161d2f;--ink:#eaeefb;--muted:#9aa5c4;--line:#27314b;--accent:#7b9bff;--accent-ink:#0e1320}}
+:root[data-theme="dark"]{--bg:#0e1320;--surface:#161d2f;--ink:#eaeefb;--muted:#9aa5c4;--line:#27314b;--accent:#7b9bff;--accent-ink:#0e1320}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--font)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+header.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:58px}
+.logo{font-weight:800;font-size:1.3rem;text-decoration:none}
+.links{display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap}
+.links a{text-decoration:none;color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--ink)}
+button{font:inherit;cursor:pointer}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.25rem .8rem;font-size:.9rem}
+.hero{padding:5rem 0 3rem}
+.hero h1{font-size:clamp(2.6rem,8vw,5.2rem);line-height:1.02;margin:0 0 1rem;font-weight:800;letter-spacing:-.03em}
+.hero p{max-width:34rem;color:var(--muted);font-size:1.2rem;margin:0 0 1.8rem}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:10px;text-decoration:none;font-weight:600;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--ink)}
+.demo{margin-top:2.5rem;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:1rem}
+.demo-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.95rem;color:var(--muted)}
+.demo canvas{width:100%;height:220px;display:block;margin-top:.7rem;cursor:crosshair;touch-action:manipulation}
+.small{font-size:.85rem;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:.2rem .7rem}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;gap:1rem;align-items:baseline;margin-bottom:1.5rem}
+.sec-head span{color:var(--accent);font-weight:600}
+h2{font-size:2rem;margin:0;letter-spacing:-.02em}
+h3{font-size:1.1rem;margin:0 0 .6rem}
+.about{display:grid;grid-template-columns:1fr;gap:1.5rem}
+.about p{margin:0 0 1rem;max-width:44rem}
+.tabs{display:flex;gap:.5rem;margin-bottom:1.5rem}
+.tab{background:none;border:1px solid var(--line);color:var(--ink);padding:.4rem 1.1rem;border-radius:999px}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.tl{list-style:none;margin:0;padding:0 0 0 1.2rem;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 1.6rem 1rem}
+.tl li::before{content:"";position:absolute;left:-1.62rem;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl b{display:block}
+.tl .when{color:var(--muted);font-size:.9rem}
+.tl p{margin:.3rem 0 0;color:var(--muted);white-space:pre-line}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.card{text-align:left;background:var(--surface);border:1px solid var(--line);color:var(--ink);border-radius:14px;padding:1.2rem}
+.card:hover{border-color:var(--accent)}
+.card h3{margin:0 0 .4rem}
+.card p{margin:0 0 .8rem;color:var(--muted);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:.1rem .65rem;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
+.bar{margin-bottom:.9rem}
+.bar div{display:flex;justify-content:space-between;font-size:.95rem}
+.bar i{display:block;height:6px;border-radius:6px;background:var(--line);margin-top:.3rem;overflow:hidden}
+.bar i u{display:block;height:100%;background:var(--accent);border-radius:6px}
+.contact a.mail{font-size:clamp(1.3rem,4vw,2rem);font-weight:800;text-decoration:none;color:var(--accent);word-break:break-all}
+.socials{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.2rem}
+.socials a{color:var(--muted)}
+footer{padding:2rem 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+dialog{border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--ink);max-width:520px;width:calc(100% - 2rem);padding:1.6rem}
+dialog::backdrop{background:rgba(5,10,25,.6)}
+dialog h3{font-size:1.4rem}
+.close{float:right}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:560px){.links a.hide{display:none}.hero{padding-top:3rem}}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top" id="logo">Name.</a>
+  <nav class="links" aria-label="Main">
+    <a class="hide" href="#about">About</a><a class="hide" href="#journey">Journey</a>
+    <a href="#projects">Projects</a><a class="hide" href="#skills">Skills</a><a href="#contact">Contact</a>
+    <button class="theme" id="theme" aria-label="Toggle light and dark theme">Theme</button>
+  </nav>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <h1 id="h-name"></h1>
+    <p id="h-tag"></p>
+    <a class="btn primary" href="#projects">View my projects</a>
+    <a class="btn ghost" href="#contact">Get in touch</a>
+    <div class="demo" id="demo">
+      <div class="demo-top">
+        <span><b style="color:var(--ink)">Try it:</b> tap the grid to add data points. <span id="fit">Add 2 points to see the fit.</span></span>
+        <button class="small" id="reset">Reset</button>
+      </div>
+      <canvas id="cv" aria-label="Tap to add points; a least-squares line is drawn through them"></canvas>
+    </div>
+  </div>
+
+  <section id="about"><div class="sec-head"><span>01</span><h2>About me</h2></div><div class="about" id="about-body"></div></section>
+
+  <section id="journey"><div class="sec-head"><span>02</span><h2>My journey</h2></div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" id="t-edu" aria-selected="true">Education</button>
+      <button class="tab" role="tab" id="t-exp" aria-selected="false">Experience</button>
+    </div>
+    <ul class="tl" id="tl"></ul>
+  </section>
+
+  <section id="projects"><div class="sec-head"><span>03</span><h2>Projects</h2></div><div class="grid" id="projects-grid"></div></section>
+
+  <section id="skills"><div class="sec-head"><span>04</span><h2>Skills</h2></div><div class="skills" id="skills-body"></div></section>
+
+  <section id="contact" class="contact"><div class="sec-head"><span>05</span><h2>Contact</h2></div>
+    <p id="c-text" style="max-width:36rem"></p>
+    <a class="mail" id="c-mail" href="#"></a>
+    <div class="socials" id="socials"></div>
+  </section>
+</div>
+</main>
+<footer><div class="wrap" id="foot"></div></footer>
+
+<dialog id="dlg"><button class="small close" id="dlg-x">Close ✕</button><div id="dlg-body"></div></dialog>
+
+<script>
+/* =====================================================
+   EDIT YOUR INFORMATION HERE. Everything below this
+   block is the page logic and does not need changes.
+   ===================================================== */
+const ME = {
+  name: "MUHAMMAD ALIF NAUFAL BIN AZEMI",
+  shortName: "MUHAMMAD ALIF NAUFAL",                       // shown in the top-left logo
+  tagline: "Student in Bachelor of Science (Hons.) Mathematics seeking for internship in data analytics or data scientist",
+  showDemo: true,                          // set to false to hide the tap-the-grid demo
+
+  about: [
+    "A motivated Bachelor of Science Mathematics student at Universiti Teknologi MARA (UiTM), with a current CGPA of 3.76 and a strong foundation in statistical analysis, mathematical problem-solving, and quantitative methods. Proficient in using Python, Microsoft Excel, MATLAB, WEKA, and RapidMiner for data analysis and computational tasks. Experienced in academic projects involving data exploration, statistical analysis, and data interpretation. Demonstrates adaptability, teamwork, and time management through part-time work experience. Seeking a 14–16-week internship opportunity in Data Analysis or Data Science to apply analytical skills and gain practical industry experience."
+  ],
+
+  education: [
+    { title: "Bachelor of Science (Hons.) Mathematics", place: "Universiti Teknologi Mara (UiTM)", when: "March 2025 – Present", note: "- Final Year Project : Application of Bezier Curves in Bicycle Helmet Geometry Design Using MATLAB\n- Current CGPA : 3.76." },
+    { title: "Diploma in Mathematical Science", place: "Universiti Teknologi Mara (UiTM)", when: "Oct 2022 - Februay 2025", note: "- CGPA : 3.6 \n- MUET : BAND 4.0" }
+  ],
+  experience: [
+    { title: "Retail Assistant (Part-Time)", place: "Al-Ikhsan Sports", when: "2025", note: "- Arranged and organized merchandise on store shelves to maintain a neat and attractive store display.\n- Assisted in stock replenishment and ensured product availability on the sales floor.\n- Supported daily store operations, including housekeeping and product arrangement.\n- Assisted customers in locating products and provided basic product information." }
+  ],
+
+  projects: [
+    { title: "Project one", summary: "One-line summary shown on the card.", details: "A longer description shown when the card is opened. Explain the problem, what you built, and the result.", tags: ["Python", "Excel"], link: "https://github.com/yourusername/project-one" },
+    { title: "Project two", summary: "One-line summary shown on the card.", details: "A longer description of this project.", tags: ["SQL"], link: "" },
+    { title: "Project two", summary: "One-line summary shown on the card.", details: "A longer description of this project.", tags: ["SQL"], link: "" },
+    { title: "Project two", summary: "One-line summary shown on the card.", details: "A longer description of this project.", tags: ["SQL"], link: "" }
+  ],
+
+  coreSkills: [ { name: "Microsoft Word", level: 90 }, { name: "Microsoft Excel", level: 80 }, { name: "Phyton", level: 70 } ],   // level is 0 to 100
+  learning: ["MATLAB", "Weka","RapidMiner","PowerBI"],
+  languages: ["English", "Malay"],
+
+  contactText: "Open to internships, collaborations and conversations. The quickest way to reach me is email.",
+  email: "alifnaufal04@gmail.com",
+  socials: [
+    { label: "GitHub", url: "https://github.com/alifnaufal04-wq" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/muhammad-alif-naufal-azemi-a590a544a" }
+  ]
+};
+/* ===================== END OF EDIT AREA ===================== */
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+document.title = ME.name + " | Portfolio";
+$("logo").textContent = ME.shortName + ".";
+$("h-name").textContent = "Hi, I’m " + ME.name.split(" ")[0] + ".";
+$("h-tag").textContent = ME.tagline;
+$("about-body").innerHTML = ME.about.map(p => "<p>" + esc(p) + "</p>").join("");
+$("c-text").textContent = ME.contactText;
+$("c-mail").textContent = ME.email; $("c-mail").href = "mailto:" + ME.email;
+$("socials").innerHTML = ME.socials.map(s => '<a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.label) + "</a>").join("");
+$("foot").textContent = "© " + new Date().getFullYear() + " " + ME.name;
+if (!ME.showDemo) $("demo").hidden = true;
+
+/* Journey tabs */
+function showTL(list, which) {
+  $("tl").innerHTML = list.length ? list.map(i =>
+    "<li><b>" + esc(i.title) + '</b><span class="when">' + esc(i.place) + " · " + esc(i.when) + "</span>" + (i.note ? "<p>" + esc(i.note) + "</p>" : "") + "</li>").join("")
+    : "<li>Nothing added yet.</li>";
+  $("t-edu").setAttribute("aria-selected", which === "edu");
+  $("t-exp").setAttribute("aria-selected", which === "exp");
+}
+$("t-edu").onclick = () => showTL(ME.education, "edu");
+$("t-exp").onclick = () => showTL(ME.experience, "exp");
+showTL(ME.education, "edu");
+
+/* Projects */
+$("projects-grid").innerHTML = ME.projects.map((p, i) =>
+  '<button class="card" data-i="' + i + '"><h3>' + esc(p.title) + "</h3><p>" + esc(p.summary) + '</p><div class="tags">' +
+  p.tags.map(t => '<span class="tag">' + esc(t) + "</span>").join("") + "</div></button>").join("");
+const dlg = $("dlg");
+$("projects-grid").onclick = e => {
+  const c = e.target.closest(".card"); if (!c) return;
+  const p = ME.projects[+c.dataset.i];
+  $("dlg-body").innerHTML = "<h3>" + esc(p.title) + "</h3><p>" + esc(p.details) + '</p><div class="tags" style="margin-bottom:1rem">' +
+    p.tags.map(t => '<span class="tag">' + esc(t) + "</span>").join("") + "</div>" +
+    (p.link ? '<a class="btn primary" href="' + esc(p.link) + '" target="_blank" rel="noopener">View project</a>' : "");
+  dlg.showModal();
+};
+$("dlg-x").onclick = () => dlg.close();
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+
+/* Skills */
+$("skills-body").innerHTML =
+  "<div><h3>Core skills</h3>" + ME.coreSkills.map(s =>
+    '<div class="bar"><div><span>' + esc(s.name) + "</span><span>" + esc(s.level) + '%</span></div><i><u style="width:' + Math.max(0, Math.min(100, +s.level || 0)) + '%"></u></i></div>').join("") + "</div>" +
+  "<div><h3>Currently learning</h3><div class=\"tags\">" + ME.learning.map(t => '<span class="tag">' + esc(t) + "</span>").join("") + "</div></div>" +
+  "<div><h3>Languages</h3><div class=\"tags\">" + ME.languages.map(t => '<span class="tag">' + esc(t) + "</span>").join("") + "</div></div>";
+
+/* Theme toggle */
+const root = document.documentElement;
+try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
+$("theme").onclick = () => {
+  const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme:dark)").matches;
+  root.dataset.theme = dark ? "light" : "dark";
+  try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+  draw();
+};
+
+/* Least-squares demo */
+const cv = $("cv"), ctx = cv.getContext("2d");
+let pts = [];
+function size() {
+  const r = devicePixelRatio || 1, w = cv.clientWidth, h = cv.clientHeight;
+  cv.width = w * r; cv.height = h * r; ctx.setTransform(r, 0, 0, r, 0, 0);
+}
+function draw() {
+  const w = cv.clientWidth, h = cv.clientHeight, cs = getComputedStyle(root);
+  const line = cs.getPropertyValue("--line"), acc = cs.getPropertyValue("--accent");
+  ctx.clearRect(0, 0, w, h);
+  ctx.strokeStyle = line; ctx.lineWidth = 1;
+  for (let x = 0; x <= w; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
+  for (let y = 0; y <= h; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+  const n = pts.length; let msg = "Add 2 points to see the fit.";
+  if (n >= 2) {
+    const sx = pts.reduce((a, p) => a + p.x, 0), sy = pts.reduce((a, p) => a + p.y, 0);
+    const sxx = pts.reduce((a, p) => a + p.x * p.x, 0), sxy = pts.reduce((a, p) => a + p.x * p.y, 0);
+    const d = n * sxx - sx * sx;
+    if (Math.abs(d) > 1e-9) {
+      const m = (n * sxy - sx * sy) / d, b = (sy - m * sx) / n;
+      ctx.strokeStyle = acc; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(0, b); ctx.lineTo(w, m * w + b); ctx.stroke();
+      msg = "y = " + (-m).toFixed(2) + "x " + ((h - b) >= 0 ? "+ " : "− ") + Math.abs((h - b) / 40).toFixed(1) + " (least-squares fit)";
+      msg = "Slope " + (-m).toFixed(2) + " (least-squares fit)";
+    } else msg = "Points are in a vertical line. Add a different x position.";
+  }
+  ctx.fillStyle = cs.getPropertyValue("--ink");
+  pts.forEach(p => { ctx.beginPath(); ctx.arc(p.x, p.y, 5, 0, 7); ctx.fill(); });
+  $("fit").textContent = msg;
+}
+cv.addEventListener("click", e => { const r = cv.getBoundingClientRect(); pts.push({ x: e.clientX - r.left, y: e.clientY - r.top }); draw(); });
+$("reset").onclick = () => { pts = []; draw(); };
+addEventListener("resize", () => { size(); draw(); });
+size(); draw();
+</script>
+</body>
+</html>
